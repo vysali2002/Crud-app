@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="col-lg-12 mt-4">
+        <h3>Create Item</h3>
+        <form #CreateForm="ngForm" class="border p-5 rounded">
+          <div class="form-floating mb-3">
+            <input #fruitid="ngModel" name="name" [(ngModel)]="fruit.id" type="email" class="form-control"
+                id="floatingInputID" placeholder="ID of item" pattern="[a-zA-Z0-9 ]*" required>
+            <label for="floatingInputID">Id of item</label>
+        </div>
+        <div *ngIf="fruitid.invalid && fruitid.touched" class="text-danger mb-3 fw-bolder">*Invalid item ID</div>
+            <div class="form-floating mb-3">
+                <input #fruitname="ngModel" name="name" [(ngModel)]="fruit.name" type="email" class="form-control" id="floatingInputName" placeholder="Name of item" pattern="[a-zA-Z0-9 ]*" required>
+                <label for="floatingInputName">Name of item</label>
+              </div>
+              <div *ngIf="fruitname.invalid && fruitname.touched" class="text-danger mb-3 fw-bolder">*Invalid item name</div>
+              <div class="form-floating mb-3">
+                <input #fruitprice="ngModel" name="price" [(ngModel)]="fruit.price"  type="email" class="form-control" id="floatingInputQuantity" placeholder="Price of item" type="number" required>
+                <label for="floatingInputQuantity">Price of item</label>
+              </div>
+              <div *ngIf="fruitprice.invalid && fruitprice.touched" class="text-danger mb-3 fw-bolder">*Invalid item price</div>
+
+              <div class="form-floating mb-3">
+                <input #fruitquantity="ngModel" name="quantity" [(ngModel)]="fruit.quantity" type="email" class="form-control" id="floatingInputQuantity" placeholder="Quantity of item" type="number"  required>
+                <label for="floatingInputQuantity">Quantity of item</label>
+              </div>
+              <div *ngIf="fruitquantity.invalid && fruitquantity.touched" class="text-danger mb-3 fw-bolder">*Invalid item quantity</div>
+
+              <div>
+                <button (click)="AddItem()" [disabled]="CreateForm.invalid" class="btn btn-outline-primary">Create</button>
+              </div>
+             
+
+        </form>
+    </div>
+</div>
