@@ -27,7 +27,7 @@ getItemDetails(id:any){
 updateItem(){
   this.api.updateItemAPI(this.fruit).subscribe((result:any)=>{
     console.log(result);
-    this.router.navigateByUrl('')
+    this.router.navigateByUrl('/dashboard')
     
   })
 }

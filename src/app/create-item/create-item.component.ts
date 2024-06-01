@@ -28,7 +28,7 @@ export class CreateItemComponent implements OnInit {
         next: (result: any) => {
           console.log(result);
           alert("Successfully added!!")
-          this.router.navigateByUrl('')
+          this.router.navigateByUrl('/dashboard')
 
         }
       
